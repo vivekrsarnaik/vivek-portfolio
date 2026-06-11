@@ -149,6 +149,7 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+           
             <a
   href="#projects"
   className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold"
@@ -444,7 +445,67 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Currently Building */}
+<section id="building" className="py-16 px-6">
+  <div className="max-w-4xl mx-auto">
+    
+
+    <h2 className="text-4xl font-bold text-center mb-12">
+      Currently Building
+    </h2>
+
+    <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 shadow-lg">
+
+      <h3 className="text-2xl font-semibold mb-4">
+        PetPulse
+      </h3>
+
+      <p className="text-gray-700 dark:text-gray-300 mb-4">
+        iOS pet health companion app helping pet owners manage
+        vaccinations, medications, vet visits, and health records.
+      </p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+          Swift
+        </span>
+
+        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+          SwiftUI
+        </span>
+
+        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+          iOS
+        </span>
+
+        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+          Notifications
+        </span>
+      </div>
+
+      <ul className="text-gray-500 dark:text-gray-400 space-y-2">
+        <li>• Vaccination reminders</li>
+        <li>• Medication tracking</li>
+        <li>• Vet visit history</li>
+        <li>• Health records management</li>
+      </ul>
+      <div className="mt-6">
+  <a
+    href="https://github.com/vivekrsarnaik/PetPulse-App"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold"
+  >
+    View on GitHub
+  </a>
+</div>
+
+    </div>
+
+  </div>
+</section>
       <div className="max-w-4xl mx-auto border-b border-gray-800"></div>
+
       {/* Projects Section */}
 <section id="projects" className="py-24 px-6">
   <div className="max-w-6xl mx-auto">
