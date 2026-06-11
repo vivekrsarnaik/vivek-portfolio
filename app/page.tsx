@@ -157,12 +157,12 @@ export default function Home() {
 </a>
 
             <a
-  href="/resume.pdf"
-  download
-  className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold"
->
-  Download Resume
-</a>
+            href="/Vivek_Sarnaik_Resume.pdf"
+            download
+            className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold"
+            >
+             Download Resume
+            </a>
           </div>
         </div>
       </section>
