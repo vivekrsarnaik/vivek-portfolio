@@ -1,9 +1,37 @@
 "use client";
+
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import ThemeToggle from "./theme-toggle";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { SiGmail } from "react-icons/si";
+
+
 export default function Home() {
-  
+
+  const [hideIcons, setHideIcons] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    const contact = document.getElementById("contact");
+
+    if (!contact) return;
+
+    const contactTop =
+      contact.getBoundingClientRect().top;
+
+    setHideIcons(contactTop < 300);
+  };
+
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
   return (
      <main className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
       {/* Navbar */}
@@ -27,7 +55,12 @@ export default function Home() {
             >
               About
             </a>
-
+            <a
+              href="#experience"
+              className="text-gray-600 dark:text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+            >
+              Experience
+            </a>
             <a
               href="#skills"
               className="text-gray-600 dark:text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
@@ -53,7 +86,34 @@ export default function Home() {
           </div>
         </div>
       </nav>
+  <div
+  id="social-sidebar"
+  className={`fixed left-6 top-1/2 -translate-y-1/2 z-[9999] flex flex-col gap-6 transition-all duration-700 ${
+    hideIcons
+      ? "-translate-x-40 opacity-0"
+      : "translate-x-0 opacity-100"
+  }`}
+>
+  <a
+    href="https://github.com/vivekrsarnaik"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-4xl text-gray-500 hover:text-white transition-all duration-300 hover:scale-110"
+  >
+    <FaGithub />
+  </a>
 
+  <a
+    href="https://www.linkedin.com/in/vivekrsarnaik/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-4xl text-gray-500 hover:text-blue-500 transition-all duration-300 hover:scale-110"
+  >
+    <FaLinkedin />
+  </a>
+
+  <div className="w-px h-24 bg-gray-600 mx-auto"></div>
+</div>
       {/* Hero Section */}
       <section
         id="home"
@@ -127,6 +187,83 @@ export default function Home() {
         </div>
       </section>
       <div className="max-w-4xl mx-auto border-b border-gray-800"></div>
+
+      {/* Experience Section */}
+<section id="experience" className="pt-24 pb-12 px-6">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-12">
+      Experience
+    </h2>
+
+    <div className="space-y-8">
+
+      {/* SkillShare */}
+      <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
+        <h3 className="text-2xl font-semibold">
+          Full-Stack Developer
+        </h3>
+
+        <p className="text-blue-500 mb-4">
+          SkillShare • Remote • Jun 2024 – Dec 2025
+        </p>
+
+        <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+  <li>• Improved page load performance by 35% using React and Next.js.</li>
+
+  <li>• Built REST APIs and optimized PostgreSQL queries for high-volume workflows.</li>
+
+  <li>• Implemented JWT/OAuth authentication and role-based access control.</li>
+
+  <li>• Automated deployments with Docker and GitHub Actions, reducing release time by 60%.</li>
+</ul>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">React</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Next.js</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Django</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Node.js</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">PostgreSQL</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Docker</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">AWS</span>
+        </div>
+      </div>
+
+      {/* Genpact */}
+      <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
+        <h3 className="text-2xl font-semibold">
+          Software Engineer
+        </h3>
+
+        <p className="text-blue-500 mb-4">
+          Genpact • Pune, India • Dec 2020 – Dec 2021
+        </p>
+
+        <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+  <li>• Developed scalable backend services using Python and Node.js.</li>
+
+  <li>• Built responsive web applications with React and Next.js.</li>
+
+  <li>• Optimized PostgreSQL performance, reducing database latency by 40%.</li>
+
+  <li>• Collaborated in Agile teams to deliver customer-facing features.</li>
+</ul>
+
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Python</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">FastAPI</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Flask</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">React</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Next.js</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">PostgreSQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div className="max-w-4xl mx-auto border-b border-gray-300 dark:border-gray-800"></div>
+
       {/* Skills Section */}
       <section id="skills" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
@@ -315,7 +452,7 @@ export default function Home() {
       Projects
     </h2>
 
-    <div className="grid md:grid-cols-2 gap-8">
+    <div className="grid md:grid-cols-3 gap-8">
 
       {/* gRPC Project */}
       <motion.div
@@ -327,15 +464,8 @@ export default function Home() {
   className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 transition-colors duration-300 shadow-lg hover:shadow-blue-500/20"
 >
         <h3 className="text-2xl font-semibold mb-4">
-          <a
-            href="https://github.com/vivekrsarnaik/gRPC-chat"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300"
-          >
-            gRPC ChatHub →
-          </a>
-        </h3>
+  gRPC ChatHub
+</h3>
 
         <p className="text-gray-700 dark:text-gray-300 mb-4">
           Real-time chat application built with Go, gRPC,
@@ -380,25 +510,119 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Next Project */}
-      <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 transition-colors duration-300">
-        <h3 className="text-2xl font-semibold mb-4">
-          Next Project
-        </h3>
+      {/* Distributed Job Scheduler */}
+      <motion.div
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  whileHover={{ y: -8 }}
+  className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 shadow-lg"
+>
+  <h3 className="text-2xl font-semibold mb-4">
+    Distributed Job Scheduler
+</h3>
 
-        <p className="text-gray-700 dark:text-gray-300">
-          Working...
-        </p>
-      </div>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Asynchronous task processing platform built with FastAPI,
+    Redis, PostgreSQL and Docker.
+  </p>
+
+  <div className="flex flex-wrap gap-2 mb-6">
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      Python
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      FastAPI
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      Redis
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      PostgreSQL
+    </span>
+  </div>
+
+  <ul className="text-gray-500 dark:text-gray-400 space-y-2">
+    <li>• Background Task Processing</li>
+    <li>• Retry Mechanism</li>
+    <li>• Status Tracking</li>
+    <li>• Docker Deployment</li>
+  </ul>
+  <div className="mt-6">
+  <a
+    href="https://github.com/vivekrsarnaik/distributed-job-scheduler"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold"
+  >
+    View on GitHub
+  </a>
+</div>
+</motion.div>
+
+
+
+<motion.div
+  initial={{ opacity: 0, x: 80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  whileHover={{ y: -8 }}
+  className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 shadow-lg"
+>
+  <h3 className="text-2xl font-semibold mb-4">
+    AI Code Review Assistant
+</h3>
+
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    AI-powered application that reviews source code and
+    provides feedback on quality, bugs and best practices.
+  </p>
+
+  <div className="flex flex-wrap gap-2 mb-6">
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      React
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      FastAPI
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      OpenAI
+    </span>
+    <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
+      PostgreSQL
+    </span>
+  </div>
+
+  <ul className="text-gray-500 dark:text-gray-400 space-y-2">
+    <li>• AI-Powered Reviews</li>
+    <li>• Code Quality Analysis</li>
+    <li>• Dark Mode UI</li>
+    <li>• Review History</li>
+  </ul>
+  <div className="mt-6">
+  <a
+    href="https://github.com/vivekrsarnaik/ai-code-review-assistant"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold"
+  >
+    View on GitHub
+  </a>
+</div>
+</motion.div>
 
     </div>
   </div>
 </section>
 
-<div className="max-w-4xl mx-auto border-b border-gray-300 dark:border-gray-800"></div>
-      {/* Contact Section */}
-<section id="contact" className="py-24 px-6">
+<div className="max-w-4xl mx-auto my-10 border-b border-gray-300 dark:border-gray-800"></div>
+
+{/* Contact Section */}
+<section id="contact" className="pt-4 pb-24 px-6">
   <div className="max-w-4xl mx-auto text-center">
+
     <h2 className="text-4xl font-bold mb-8">
       Contact
     </h2>
@@ -408,40 +632,43 @@ export default function Home() {
     </p>
 
     <div className="flex flex-col md:flex-row justify-center gap-6">
-      <motion.a
-  href="mailto:vivekrsarnaik@gmail.com"
-  whileHover={{
-    x: [-3, 3, -3, 3, 0],
-  }}
-  transition={{
-    duration: 0.3,
-  }}
-  className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold"
->
-  📧 Email Me
-</motion.a>
 
       <a
-  href="https://www.linkedin.com/in/vivekrsarnaik/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold shadow-lg shadow-blue-600/30 transition-all duration-300"
+  href="mailto:vivekrsarnaik@gmail.com"
+  className="flex items-center justify-center gap-2 bg-white text-black border border-gray-300 px-6 py-3 rounded-lg font-semibold"
 >
-  LinkedIn
+  <img
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+    alt="Gmail"
+    className="w-5 h-5"
+  />
+  Email Me
 </a>
+
+      <a
+        href="https://www.linkedin.com/in/vivekrsarnaik/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 bg-[#0A66C2] hover:bg-[#004182] px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300"
+      >
+        <FaLinkedin />
+        LinkedIn
+      </a>
 
       <a
         href="https://github.com/vivekrsarnaik"
         target="_blank"
         rel="noopener noreferrer"
-        className="border border-gray-600 hover:border-white hover:bg-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+        className="flex items-center justify-center gap-2 bg-black text-white border border-gray-700 hover:border-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
       >
+        <FaGithub />
         GitHub
       </a>
+
     </div>
+
   </div>
 </section>
-
     </main>
   );
 }
