@@ -1,7 +1,7 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggle from "./theme-toggle";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -14,6 +14,14 @@ export default function Home() {
   const [hideIcons, setHideIcons] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = [
+  "Software Engineer",
+  "Backend Engineer",
+  "Cloud & Distributed Systems",
+  "AI-Powered Applications",
+];
+
 
   useEffect(() => {
   const sections = [
@@ -25,6 +33,11 @@ export default function Home() {
     "projects",
     "contact",
   ];
+  
+  
+  
+
+
 
   const handleScroll = () => {
   const scrollPosition = window.scrollY + 200;
@@ -54,6 +67,14 @@ export default function Home() {
   
 
   return () => window.removeEventListener("scroll", handleScroll);
+ 
+}, []);
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setRoleIndex((prev) => (prev + 1) % roles.length);
+  }, 2500);
+
+  return () => clearInterval(interval);
 }, []);
 const navLink = (section: string) =>
   `px-4 py-2 rounded-full transition-all duration-300 ${
@@ -191,24 +212,21 @@ const navLink = (section: string) =>
     Hi, I'm Vivek Sarnaik
   </h1>
 
-  <TypeAnimation
-  sequence={[
-    "Software Engineer",
-    2000,
-    "Backend Engineer",
-    2000,
-    "Cloud Engineer",
-    2000,
-    "Distributed Systems Enthusiast",
-    2000,
-    "Building Scalable Applications",
-    2000,
-  ]}
-  wrapper="span"
-  speed={50}
-  repeat={Infinity}
-  className="text-xl md:text-3xl text-gray-400 mb-6 block"
-/>
+  <div className="h-12 flex justify-center items-center mb-6">
+  <AnimatePresence mode="wait">
+    <motion.p
+      key={roleIndex}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="text-xl md:text-3xl text-gray-400 font-medium"
+    >
+      {roles[roleIndex]}
+    </motion.p>
+  </AnimatePresence>
+  
+</div>
 
   <p className="max-w-3xl text-lg text-gray-400 leading-relaxed">
     I recently completed my Master's degree and have a strong interest in backend
