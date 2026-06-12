@@ -55,7 +55,7 @@ export default function Home() {
 
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
-const navLink = (section) =>
+const navLink = (section: string) =>
   `px-4 py-2 rounded-full transition-all duration-300 ${
     activeSection === section
       ? "bg-blue-600 text-white shadow-lg"
