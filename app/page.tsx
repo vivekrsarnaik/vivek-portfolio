@@ -86,8 +86,24 @@ const navLink = (section: string) =>
   onMouseEnter={() => setHovered(true)}
   onMouseLeave={() => setHovered(false)}
 >
-  {hovered ? "Always improving." : "Build. Learn. Repeat."}
-  <span className="animate-pulse text-blue-500 ml-1">|</span>
+  <TypeAnimation
+  sequence={[
+    "Build. Learn. Repeat.",
+    2500,
+    "Always Improving.",
+    2500,
+    "From Idea → Product.",
+    2500,
+    "Backend. Cloud. AI.",
+    2500,
+    "Code. Create. Ship.",
+    2500,
+  ]}
+  wrapper="span"
+  speed={60}
+  repeat={Infinity}
+  className="text-lg md:text-xl font-bold"
+/>
 </h1>
 
           <div className="flex items-center gap-2">
