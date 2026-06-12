@@ -115,6 +115,7 @@ export default function Home() {
   <div className="w-px h-24 bg-gray-600 mx-auto"></div>
 </div>
       {/* Hero Section */}
+      
       <section
         id="home"
         className="flex items-center justify-center min-h-[80vh]"
@@ -122,6 +123,18 @@ export default function Home() {
         <div className="text-center px-6">
         
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
+            <motion.img
+  src="/profile.jpg"
+  alt="Vivek Sarnaik"
+  className="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover mx-auto mb-8 border-4 border-blue-500 shadow-xl"
+  animate={{
+    y: [0, -8, 0],
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+  }}
+/>
   <TypeAnimation
     sequence={[
       "Hi, I'm Vivek Sarnaik",
@@ -176,9 +189,11 @@ export default function Home() {
           </h2>
 
           <p className="text-gray-700 dark:text-gray-300 text-lg leading-8 text-center">
-            I'm a Software Engineer with a background in Computer Science and
-            Information Science. My interests include distributed systems,
-            cloud computing, backend engineering, and AI-powered applications.
+            Hi, I'm Vivek, a Software Engineer who enjoys turning ideas into real applications.
+
+I recently completed my Master's degree and have a strong interest in backend development, distributed systems, cloud technologies, and AI-powered software. I enjoy building things from scratch, whether it's a real-time chat application, a distributed job scheduler, or an AI-powered tool.
+
+My favorite part of software engineering is solving challenging problems and designing systems that can scale. I'm always learning, building, and looking for ways to improve my skills while creating meaningful projects.
           </p>
 
           <p className="text-gray-700 dark:text-gray-300 text-lg leading-8 text-center mt-6">
@@ -445,66 +460,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Currently Building */}
-<section id="building" className="py-16 px-6">
-  <div className="max-w-4xl mx-auto">
-    
+      
+      <div className="max-w-4xl mx-auto border-b border-gray-300 dark:border-gray-800"></div>
 
-    <h2 className="text-4xl font-bold text-center mb-12">
-      Currently Building
-    </h2>
-
-    <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6 shadow-lg">
-
-      <h3 className="text-2xl font-semibold mb-4">
-        PetPulse
-      </h3>
-
-      <p className="text-gray-700 dark:text-gray-300 mb-4">
-        iOS pet health companion app helping pet owners manage
-        vaccinations, medications, vet visits, and health records.
-      </p>
-
-      <div className="flex flex-wrap gap-2 mb-4">
-        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
-          Swift
-        </span>
-
-        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
-          SwiftUI
-        </span>
-
-        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
-          iOS
-        </span>
-
-        <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">
-          Notifications
-        </span>
-      </div>
-
-      <ul className="text-gray-500 dark:text-gray-400 space-y-2">
-        <li>• Vaccination reminders</li>
-        <li>• Medication tracking</li>
-        <li>• Vet visit history</li>
-        <li>• Health records management</li>
-      </ul>
-      <div className="mt-6">
-  <a
-    href="https://github.com/vivekrsarnaik/PetPulse-App"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold"
-  >
-    View on GitHub
-  </a>
-</div>
-
-    </div>
-
-  </div>
-</section>
-      <div className="max-w-4xl mx-auto border-b border-gray-800"></div>
 
       {/* Projects Section */}
 <section id="projects" className="py-24 px-6">
@@ -512,7 +470,34 @@ export default function Home() {
     <h2 className="text-4xl font-bold text-center mb-12">
       Projects
     </h2>
+<motion.div
+  className="text-center mb-8"
+>
+  <span className="inline-flex items-center gap-2 px-5 py-3 bg-blue-600 rounded-full text-sm font-semibold shadow-lg">
+    <motion.span
+      animate={{ rotate: [0, -20, 20, -20, 0] }}
+      transition={{
+        duration: 1,
+        repeat: Infinity,
+        repeatDelay: 1,
+      }}
+    >
+      🔨
+    </motion.span>
+    
 
+    
+      <a
+  href="https://github.com/vivekrsarnaik/PetPulse-App"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 text-white-500 hover:text-white-400 font-medium"
+>
+  
+  Currently Building: (iOS Pet Health App) PetPulse →
+</a>
+  </span>
+</motion.div>
     <div className="grid md:grid-cols-3 gap-8">
 
       {/* gRPC Project */}
