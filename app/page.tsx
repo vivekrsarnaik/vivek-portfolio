@@ -13,7 +13,7 @@ export default function Home() {
 
   const [hideIcons, setHideIcons] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
   const sections = [
