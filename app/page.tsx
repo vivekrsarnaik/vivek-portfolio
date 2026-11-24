@@ -296,64 +296,43 @@ const navLink = (section: string) =>
 
     <div className="space-y-8">
 
-      {/* SkillShare */}
       <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
-        <h3 className="text-2xl font-semibold">
-          Full-Stack Developer
-        </h3>
-
-        <p className="text-blue-500 mb-4">
-          SkillShare • Remote • Jun 2024 – Dec 2025
-        </p>
-
+        <h3 className="text-2xl font-semibold">Software Engineer</h3>
+        <p className="text-blue-500 mb-4">Almond Technologies • Pune, India • Aug 2020 – Dec 2021</p>
         <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
-  <li>• Improved page load performance by 35% using React and Next.js.</li>
-
-  <li>• Built REST APIs and optimized PostgreSQL queries for high-volume workflows.</li>
-
-  <li>• Implemented JWT/OAuth authentication and role-based access control.</li>
-
-  <li>• Automated deployments with Docker and GitHub Actions, reducing release time by 60%.</li>
-</ul>
-
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">React</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Next.js</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Django</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Node.js</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">PostgreSQL</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Docker</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">AWS</span>
-        </div>
-      </div>
-
-      {/* Genpact */}
-      <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
-        <h3 className="text-2xl font-semibold">
-          Software Engineer
-        </h3>
-
-        <p className="text-blue-500 mb-4">
-          Genpact • Pune, India • Dec 2020 – Dec 2021
-        </p>
-
-        <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
-  <li>• Developed scalable backend services using Python and Node.js.</li>
-
-  <li>• Built responsive web applications with React and Next.js.</li>
-
-  <li>• Optimized PostgreSQL performance, reducing database latency by 40%.</li>
-
-  <li>• Collaborated in Agile teams to deliver customer-facing features.</li>
-</ul>
-
+  <li>• Reduced API response time by 30% (400 ms to 280 ms) across endpoints handling 5K+ daily requests by adding PostgreSQL indexes and fixing N+1 queries in FastAPI.</li>
+  <li>• Improved LCP by 14% (2.8 s to 2.4 s) on customer-facing pages by lazy loading below-the-fold React/TypeScript components.</li>
+  <li>• Eliminated 10+ recurring production bugs, including duplicate SQL JOIN results, through Python refactoring and pytest regression tests.</li>
+  <li>• Built idempotent Stripe webhook handlers end-to-end with SendGrid to automate payment confirmation and failure emails for 1K+ monthly transactions.</li>
+  <li>• Secured 30+ FastAPI endpoints with JWT authentication, refresh tokens, bcrypt password hashing, and role-based access control.</li>
+        </ul>
         <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Python</span>
           <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">FastAPI</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Flask</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">React</span>
-          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Next.js</span>
           <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">PostgreSQL</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">React</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">TypeScript</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Stripe</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">pytest</span>
+        </div>
+      </div>
+
+      <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
+        <h3 className="text-2xl font-semibold">Software Engineer Intern</h3>
+        <p className="text-blue-500 mb-4">Almond Technologies • Pune, India • Jan 2020 – Jul 2020</p>
+        <ul className="text-gray-700 dark:text-gray-300 space-y-2 mb-4">
+  <li>• Wrote 120+ JUnit unit and integration tests for Java backend services, improving regression coverage and catching defects before release.</li>
+  <li>• Ran JMeter load tests to identify backend performance bottlenecks and reported findings to the team.</li>
+  <li>• Maintained Jenkins CI/CD pipelines and Docker test environments by troubleshooting failed builds.</li>
+  <li>• Deployed Dockerized test environments on AWS EC2 and monitored test runs using Amazon CloudWatch.</li>
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Java</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">JUnit</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">JMeter</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Jenkins</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">Docker</span>
+          <span className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">AWS</span>
         </div>
       </div>
 
@@ -463,10 +442,10 @@ const navLink = (section: string) =>
 
     <div>
       <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
         className="w-12 h-12 mx-auto"
       />
-      <p className="mt-2 text-sm">Angular</p>
+      <p className="mt-2 text-sm">TypeScript</p>
     </div>
 
     <div>
@@ -493,10 +472,10 @@ const navLink = (section: string) =>
   <div className="grid grid-cols-2 gap-6 text-center">
     <div>
       <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
         className="w-12 h-12 mx-auto transition-transform duration-300 hover:scale-125"
       />
-      <p className="mt-2 text-sm">Spring Boot</p>
+      <p className="mt-2 text-sm">Redis</p>
     </div>
 
     <div>
@@ -517,7 +496,7 @@ const navLink = (section: string) =>
 
     <div>
       <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+        src="https://skillicons.dev/icons?i=aws"
         className="w-12 h-12 mx-auto dark:invert transition-transform duration-300 hover:scale-125"
       />
       <p className="mt-2 text-sm">AWS</p>
@@ -533,10 +512,10 @@ const navLink = (section: string) =>
 
     <div>
       <img
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
         className="w-12 h-12 mx-auto transition-transform duration-300 hover:scale-125"
       />
-      <p className="mt-2 text-sm">Kubernetes</p>
+      <p className="mt-2 text-sm">Jenkins</p>
     </div>
   </div>
 </motion.div>
@@ -556,7 +535,7 @@ const navLink = (section: string) =>
 
       <div className="border border-gray-300 dark:border-gray-800 rounded-xl p-6">
         <h3 className="text-2xl font-semibold">
-          M.S. Information Science
+          M.S. Information Studies
         </h3>
 
         <p className="text-blue-500">
@@ -695,7 +674,7 @@ const navLink = (section: string) =>
 
         <div className="mt-6">
           <a
-  href="https://github.com/vivekrsarnaik/gRPC-chat"
+  href="https://github.com/vivekrsarnaik/gRPC-chat-Application"
   target="_blank"
   rel="noopener noreferrer"
   className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all duration-300"
@@ -745,8 +724,8 @@ const navLink = (section: string) =>
   </div>
 
   <ul className="text-gray-500 dark:text-gray-400 space-y-2">
-    <li>• Background Task Processing</li>
-    <li>• Retry Mechanism</li>
+    <li>• Priority Queues &amp; Multi-Worker Processing</li>
+    <li>• Exponential Backoff Retries</li>
     <li>• Status Tracking</li>
     <li>• Docker Deployment</li>
   </ul>
